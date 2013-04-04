@@ -8,7 +8,7 @@ if [[ `cut -d' ' -f 1 /etc/issue 2>/dev/null | head -n 1` == "CentOS" ]]; then
   fi
 fi
 
-# prompt
+# modify prompt: user@hostname:/full/pwd$
 PS1='\u@\h:\w\$ '
 
 # modify window title for xterm and compatible
@@ -27,9 +27,16 @@ if [ `uname` == "Darwin" ]; then
 elif [ `uname` == "Linux" ]; then
   alias ls='ls --color'
 fi
+
+## more ls
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+
+## stat - make Mac OS X `stat' behave like Linux
+if [ `uname` == "Darwin" ]; then
+  alias stat='stat -x'
+fi
 
 ## grep
 alias grep='grep --color=auto'
