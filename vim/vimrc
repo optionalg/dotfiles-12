@@ -1,6 +1,6 @@
 " Global vim options
 syntax on
-set nu hls ruler modeline
+set nonu hls ruler modeline
 set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 
 " Global custom highlighting rules
