@@ -1,0 +1,8 @@
+.*.swp
+.*
+!.gitignore
+*~
+pkg/
+metadata.json
+.DS_Store
+._*
