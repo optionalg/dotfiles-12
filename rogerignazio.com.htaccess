@@ -31,3 +31,8 @@ Options -Indexes
   RewriteCond %{HTTP_HOST} ^www.rogerignazio.com$ [NC]
   RewriteRule ^(.*)$ http://rogerignazio.com/$1 [R=301,L]
 </IfModule>
+
+# Error documents
+ErrorDocument 403 /errors/403.html
+ErrorDocument 404 /errors/404.html
+ErrorDocument 500 /errors/500.html
