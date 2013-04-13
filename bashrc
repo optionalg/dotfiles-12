@@ -48,8 +48,7 @@ unset MAILCHECK
 
 # add ~/bin to path if exists
 if [ -d "$HOME/bin" ]; then
-  PATH="$PATH:$HOME/bin"
-  export PATH
+  export PATH="$PATH:$HOME/bin"
 fi
 
 # user/machine specific environments
@@ -61,3 +60,6 @@ if [ $HOSTNAME == "xps" ]; then
   export PERL5LIB="/home/rignazio/perl5/lib/perl5/x86_64-linux-gnu-thread-multi:/home/rignazio/perl5/lib/perl5"
   export PATH="/home/rignazio/perl5/bin:$PATH"
 fi
+
+# Misc environment variables
+export RUBYOPT="rubygems"
