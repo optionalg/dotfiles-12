@@ -8,13 +8,14 @@ if [[ `cut -d' ' -f 1 /etc/issue 2>/dev/null | head -n 1` == "CentOS" ]]; then
   fi
 fi
 
-# modify prompt: user@hostname:/full/pwd$
-PS1='\u@\h:\w\$ '
+# modify prompt and window title
+#PS1='\u@\h:\w\$ ' # user@hostname:/full/pwd$
+PS1='\u@\h:\W\$ ' # user@hostname:working_dir$
 
-# modify window title for xterm and compatible
 case "$TERM" in
 xterm*)
-  PS1="\[\e]0;\u@\h: \w\a\]$PS1"
+#  PS1="\[\e]0;\u@\h: \w\a\]$PS1" # user@hostname:/full/pwd$
+  PS1="\[\e]0;\u@\h: \W\a\]$PS1" # user@hostname:working_dir$
   ;;
 *)
   ;;
