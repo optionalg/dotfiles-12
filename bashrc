@@ -48,8 +48,7 @@ unset MAILCHECK
 
 # add ~/bin to path if exists
 if [ -d "$HOME/bin" ]; then
-  PATH="$PATH:$HOME/bin"
-  export PATH
+  export PATH="$PATH:$HOME/bin"
 fi
 
 # user/machine specific environments
