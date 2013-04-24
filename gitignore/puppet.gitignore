@@ -1,6 +1,4 @@
-.*.swp
-.*
-!.gitignore
+*.swp
 *~
 pkg/
 metadata.json
