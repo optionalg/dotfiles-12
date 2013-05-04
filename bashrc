@@ -53,11 +53,18 @@ if [ -d "$HOME/bin" ]; then
 fi
 
 # user/machine specific environments
-# rignazio@xps (ubuntu) - export local perl paths
+# rignazio@xps (Ubuntu)
 if [ $HOSTNAME == "xps" ]; then
+  # export local perl paths
   export PERL_LOCAL_LIB_ROOT="/home/rignazio/perl5"
   export PERL_MB_OPT="--install_base /home/rignazio/perl5"
   export PERL_MM_OPT="INSTALL_BASE=/home/rignazio/perl5"
   export PERL5LIB="/home/rignazio/perl5/lib/perl5/x86_64-linux-gnu-thread-multi:/home/rignazio/perl5/lib/perl5"
   export PATH="/home/rignazio/perl5/bin:$PATH"
+fi
+
+# rji@applecore (Mac)
+if [ `echo $HOSTNAME | awk -F. '{ print $1 }'` == "applecore" ]; then
+  # allow up to 1024 open files (needed to build Android from source)
+  ulimit -S -n 1024
 fi
