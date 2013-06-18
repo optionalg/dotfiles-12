@@ -1,3 +1,5 @@
 [user]
   name = Roger Ignazio
   email = me@rogerignazio.com
+[color]
+	ui = auto
