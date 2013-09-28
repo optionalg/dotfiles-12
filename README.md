@@ -10,3 +10,4 @@ There are a few different projects mixed in with this repo and I'd like to make 
   * Puppet Labs, for [puppet.vim](https://github.com/puppetlabs/puppet/tree/master/ext/vim/)
   * Tim Sharpe's [vim-puppet](https://github.com/rodjek/vim-puppet)
   * Matt Wozniski's [Tabular](https://github.com/godlygeek/tabular)
+  * Marco Hinz's [vim-signify](https://github.com/mhinz/vim-signify)

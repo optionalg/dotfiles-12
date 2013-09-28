@@ -16,3 +16,12 @@ highlight OverLength ctermbg=red ctermfg=white
 " See PEP 8 (Style Guide) at http://www.python.org/dev/peps/pep-0008/
 au FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
 au FileType python match OverLength /\%>79v.\+/
+
+" vim-signify options
+highlight SignColumn                       ctermbg=none
+highlight DiffAdd               cterm=bold ctermbg=none ctermfg=2
+highlight DiffDelete            cterm=bold ctermbg=none ctermfg=1
+highlight DiffChange            cterm=bold ctermbg=none ctermfg=3
+highlight SignifySignAdd        cterm=bold ctermbg=none  ctermfg=2
+highlight SignifySignDelete     cterm=bold ctermbg=none  ctermfg=1
+highlight SignifySignChange     cterm=bold ctermbg=none  ctermfg=3
