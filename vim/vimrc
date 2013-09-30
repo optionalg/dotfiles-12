@@ -17,6 +17,9 @@ highlight OverLength ctermbg=red ctermfg=white
 au FileType python setlocal tabstop=8 expandtab shiftwidth=4 softtabstop=4
 au FileType python match OverLength /\%>79v.\+/
 
+" Ruby-specific
+au FileType ruby setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+
 " vim-signify options
 highlight SignColumn                       ctermbg=none
 highlight DiffAdd               cterm=bold ctermbg=none ctermfg=2
