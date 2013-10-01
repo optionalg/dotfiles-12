@@ -2,4 +2,6 @@
   name = Roger Ignazio
   email = me@rogerignazio.com
 [color]
-	ui = auto
+  ui = auto
+[core]
+  excludesfile = /Users/rji/dotfiles/gitignore/global.gitignore

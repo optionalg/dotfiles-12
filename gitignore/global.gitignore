@@ -1,0 +1,9 @@
+# Mac-specific
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+# Editors / temp files
+*~
+*.swp
