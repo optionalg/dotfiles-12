@@ -68,4 +68,5 @@ if [ `echo $HOSTNAME | awk -F. '{ print $1 }'` == "applecore" ]; then
   ulimit -S -n 1024
   alias top='top -s3 -o cpu -R -F'
   PATH=$PATH:$HOME/.rvm/bin
+  PATH=/usr/local/bin:$PATH
 fi
