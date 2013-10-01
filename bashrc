@@ -65,6 +65,7 @@ fi
 
 # rji@applecore (Mac)
 if [ `echo $HOSTNAME | awk -F. '{ print $1 }'` == "applecore" ]; then
-  # allow up to 1024 open files (needed to build Android from source)
   ulimit -S -n 1024
+  alias top='top -s3 -o cpu -R -F'
+  PATH=$PATH:$HOME/.rvm/bin
 fi
