@@ -4,4 +4,4 @@
 [color]
   ui = auto
 [core]
-  excludesfile = /Users/rji/dotfiles/gitignore/global.gitignore
+  excludesfile = ~/dotfiles/gitignore/global.gitignore
