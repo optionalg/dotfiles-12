@@ -9,7 +9,7 @@ if !filereadable(vundle_readme)
     let vundle_ready = 0
     echo 'Found that Vundle is not installed. Installing...'
     echo
-    silent !mkdir ~/.vim/bundle
+    silent !mkdir -p ~/.vim/bundle
     silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
 endif
 
