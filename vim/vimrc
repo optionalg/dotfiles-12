@@ -1,10 +1,17 @@
-" Roger Ignazio's .vimrc
-"
-" Setup instructions:
-"   1. Open Vim and run ':BundleInstall'
-"   2. That's it!
-"
+" .vimrc
 set nocompatible
+set backspace=2
+
+" Bootstrap Vundle
+let vundle_ready = 1
+let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
+if !filereadable(vundle_readme)
+    let vundle_ready = 0
+    echo 'Found that Vundle is not installed. Installing...'
+    echo
+    silent !mkdir ~/.vim/bundle
+    silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+endif
 
 " Vundle bundles
 set rtp+=~/.vim/bundle/vundle/
@@ -19,6 +26,14 @@ Bundle 'rodjek/vim-puppet'
 Bundle 'godlygeek/tabular'
 Bundle 'mhinz/vim-signify'
 
+" If Vundle was just installed, auto-install bundles
+if vundle_ready == 0
+    echo 'Installing bundles...'
+    echo
+    :BundleInstall
+endif
+
+" General settings
 filetype indent plugin on
 syntax on
 set nonu
