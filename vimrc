@@ -1,6 +1,7 @@
 " .vimrc
 set nocompatible
 set backspace=2
+filetype off
 
 " Bootstrap Vundle
 let vundle_ready = 1
