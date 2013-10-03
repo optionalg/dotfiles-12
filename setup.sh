@@ -14,6 +14,11 @@ ln -s -f ${DOTFILES}/bashrc ~/.bashrc 2>/dev/null
 RETVAL=$?
 [[ $RETVAL == 0 ]] && echo $SUCCESS || echo $FAILURE
 
+echo -n "Linking .gemrc... "
+ln -s -f ${DOTFILES}/gemrc ~/.gemrc 2>/dev/null
+RETVAL=$?
+[[ $RETVAL == 0 ]] && echo $SUCCESS || echo $FAILURE
+
 echo -n "Linking .gitconfig... "
 ln -s -f ${DOTFILES}/gitconfig ~/.gitconfig 2>/dev/null
 RETVAL=$?
