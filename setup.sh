@@ -24,6 +24,13 @@ ln -s -f ${DOTFILES}/gitconfig ~/.gitconfig 2>/dev/null
 RETVAL=$?
 [[ $RETVAL == 0 ]] && echo $SUCCESS || echo $FAILURE
 
+echo -n "Linking .irbrc... "
+ln -s -f ${DOTFILES}/irbrc ~/.irbrc 2>/dev/null
+RETVAL=$?
+[[ $RETVAL == 0 ]] && echo $SUCCESS || echo $FAILURE
+
+
+
 echo -n "Linking .vimrc... "
 ln -s -f ${DOTFILES}/vimrc ~/.vimrc 2>/dev/null
 RETVAL=$?
