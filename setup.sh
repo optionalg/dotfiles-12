@@ -1,37 +1,22 @@
 #!/bin/bash
 
-DOTFILES=~/.dotfiles
-SUCCESS="Success!"
-FAILURE="Failed."
+for dotfile in ~/.dotfiles/*; do
+    [ -d $dotfile ] && continue
+    basename=`basename $dotfile`
 
-echo -n "Linking .bash_profile... "
-ln -s -f ${DOTFILES}/bash_profile ~/.bash_profile 2>/dev/null
-RETVAL=$?
-[[ $RETVAL == 0 ]] && echo $SUCCESS || echo $FAILURE
+    if [ $basename != "README.md" -a $basename != "setup.sh" ]; then
+        printf '%-64s' "Linking $dotfile to ~/.$basename "
+        ln -s -f $dotfile ~/.${basename} 2>/dev/null
+        RETVAL=$?
+        if [ $RETVAL == 0 ]; then
+            tput setaf 2
+            echo -n "[ Success ]"
+        else
+            tput setaf 1
+            echo -n "[ Failure ]"
+        fi
 
-echo -n "Linking .bashrc... "
-ln -s -f ${DOTFILES}/bashrc ~/.bashrc 2>/dev/null
-RETVAL=$?
-[[ $RETVAL == 0 ]] && echo $SUCCESS || echo $FAILURE
-
-echo -n "Linking .gemrc... "
-ln -s -f ${DOTFILES}/gemrc ~/.gemrc 2>/dev/null
-RETVAL=$?
-[[ $RETVAL == 0 ]] && echo $SUCCESS || echo $FAILURE
-
-echo -n "Linking .gitconfig... "
-ln -s -f ${DOTFILES}/gitconfig ~/.gitconfig 2>/dev/null
-RETVAL=$?
-[[ $RETVAL == 0 ]] && echo $SUCCESS || echo $FAILURE
-
-echo -n "Linking .irbrc... "
-ln -s -f ${DOTFILES}/irbrc ~/.irbrc 2>/dev/null
-RETVAL=$?
-[[ $RETVAL == 0 ]] && echo $SUCCESS || echo $FAILURE
-
-
-
-echo -n "Linking .vimrc... "
-ln -s -f ${DOTFILES}/vimrc ~/.vimrc 2>/dev/null
-RETVAL=$?
-[[ $RETVAL == 0 ]] && echo $SUCCESS || echo $FAILURE
+        tput sgr0
+        echo
+    fi
+done
